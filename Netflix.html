@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<style>
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding:40px;
+        /* font-family: Arial; */
+        padding-right: 100px;
+        color:white;
+        /* border:2px solid yellow; */
+        
+    }
+    .btn{
+        display: inline-block;
+        background-color: red;
+        border-radius: 3px;
+        padding:9px;
+        width: 80px;
+        text-align: center;
+        font-family: Arial;
+    }
+    .shopping-site{
+        font-size:30px;
+        font-weight: bold;
+        font-family:Arial;
+        color:red;
+    }
+    span{
+        margin-right: 15px;
+    }
+    .language{
+        display: inline-block;
+        padding:7px;
+        border:1px solid white;
+        border-radius:5px;
+    }
+    .title{
+      font-size:50px;
+      font-weight: bold;
+      font-family: Arial;
+      text-align: center;
+      color:white;
+      width:100%;
+      /* border:5px solid yellow; */
+      margin-top:140px;
+    }
+    .sub-title{
+      color:white;
+      font-size:25px;
+      /* font-weight: bold; */
+      font-family:Arial;
+      text-align:center;
+      margin-top: 20px;;
+    }
+    main{
+        margin-top: 20px;
+        text-align:center;
+        color:white;
+    }
+    .main-title{
+        font-size:20px;
+        /* font-weight: bold; */
+        font-family:Arial;
+        /* text-align:center; */
+        /* color:white; */
+        margin-top:20px;
+    }
+    .shade{
+        background-color: rgba(0,0,0,0.7);
+        width:101.05%; 
+        height:103.9vh;
+        margin-top:-5vh;
+        margin-bottom:-15vh;
+        margin-right:-5px;
+        margin-left:-8px;
+        
+    }
+    section{
+        padding-right:60px;
+    }
+    .email{
+        display: inline-block;
+        color:white;
+        border:2px solid white;
+        text-align:left;
+        padding:10px;
+        font-size:20px;
+        margin-top: 20px;
+        width:250px;
+    }
+    .btn-start{
+        display:inline-block;
+        color:white;
+        background-color: red;
+        font-size:20px;
+        text-align:center;
+        padding:10px;
+        width:160px;
+    }
+</style>
+<body background="public/Netflix.jpg">
+    <div class="shade">
+        <header>
+            <div>
+                <span class="shopping-site">NETFLIX</span>
+            </div>
+            <div>
+                <span class="language">
+                    <span class="bi bi-translate"></span>
+                    English
+                    <span class="bi bi-chevron-down"></span>
+                </span>    
+                <span class="btn">Sign in</span>
+            </div>
+        </header>
+        <section>
+            <main>
+                <div class="title">Laughter. Tears. Thrills. Find it all on Netflix.</div>
+                <div class="sub-title">Endless entertainment starts at just ₹ 149. Cancel anytime. </div>
+                <div class="main-title">Ready to watch? Enter your email to create or restart your membership.</div>
+                <div class="register">
+                    <span class="email" contenteditable="true">Email Address</span>
+                    <span class="btn-start">Get Started
+                    <span class="bi bi-chevron-right"></span>
+                    </span>
+                </div>
+            </main>
+        </section>
+    </div> 
+</body>
+</html>
