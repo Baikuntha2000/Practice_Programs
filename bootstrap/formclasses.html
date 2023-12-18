@@ -1,0 +1,90 @@
+
+<!-- FORM CLASSES:i. form-cortrol    input element=text, email,url, number , password,date , textarea -->
+            <!-- ii. form-label     label -->
+            <!-- iii. form-check-input   radio and checkbox -->
+            <!-- iv. form-select      dropdown,listbox -->
+            <!-- v. form-control-color  -->
+            <!-- vi. form-switch    radio and checkbox container    -->
+            <!-- vii. form-control-file -->
+            <!-- viii. form-check-lable  radio and checkbox labels -->
+            <!-- viii. form-check-lable  radio and checkbox labels -->
+            <!-- ix. form-range     range -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+          body{
+            border: 1px solid black;
+            height:100vh;
+        }
+    </style>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center">
+    <form class="bg-dark text-white p-4 w-25 border border-2 border-dark rounded">
+        <h3><span class="bi bi-person-fill"></span> Register User</h3>
+        <div class="mb-2">
+            <!-- Here, the for attribute in the <label> tag has the value "UserName,"  -->
+            <!-- which matches the name attribute of the input field. This association -->
+            <!-- allows users to click on the label to focus on the corresponding input field. -->
+            <!-- It also benefits screen readers and other assistive technologies. -->
+<!--  -->
+            <!-- If you omit the for attribute or use an incorrect value, the label might -->
+            <!-- not be correctly associated with the input field. While modern browsers may -->
+            <!-- still visually associate the label and input without the for attribute, it's  -->
+            <!-- considered good practice to include it for better accessibility. -->
+            <label for="UserName" class="form-label">User Name</label>
+            <div>
+                <input type="text" class="form-control" name="UserName">
+            </div>
+            <!-- form-control: This class is applied to form elements like input, textarea, and select to style  -->
+            <!-- them as block-level elements with 100% width. It provides consistent styling for form controls,  -->
+            <!-- including setting the width, height, padding, and border properties.Without form-control, your  -->
+            <!-- input fields might not have the same styling, and you may need to manually apply styles to achieve a similar look. -->
+            
+            <!-- form-label: This class is used to style the labels associated with form controls. It typically provides  -->
+            <!-- margin and font styles to make the label visually associated with its corresponding form element. -->
+            <!-- Without form-label, your labels would lack the default Bootstrap styling. While skipping this class  -->
+            <!-- won't break anything, using it helps maintain a consistent and visually appealing form layout. -->
+
+
+        </div>
+        <div class="mb-2">
+            <label for="Password"  class="form-label">Password</label>
+            <div>
+                <input type="password" class="form-control" name="Password">
+            </div>
+        </div>
+        <div class="mb-2">
+            <label for="City"  class="form-label">City</label>
+            <div>
+                <select name="City" id=""  class="form-select">
+                    <option value="Select Your City">Select Your City </option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Subscribe</label>
+            <div class="form-switch">
+                <input type="checkbox" checked  class="form-check-input"> <label for="form-check-label">Yes</label>
+            </div>
+        </div>
+        <div class="mb-2">
+            <button class="btn btn-light w-100 ">Register</button>
+        </div>
+    </form>
+    <!-- The behavior you're observing is due to the fact that the <form> element, -->
+         <!-- by default, does not take up the full height of its parent container.  -->
+         <!-- When you apply the d-flex justify-content-center align-items-center classes to the <body> tag,  -->
+        <!-- it centers its content within the full height of the body. However, when you apply  -->
+        <!-- those classes to the <form> tag, it only centers its content within the height of the form itself. -->
+        <!-- To center the form within the full height of the body, you need to make sure the <form> tag takes up the full height. -->
+             <!-- You can do this by setting the height of both the <html> and <body> elements to 100%: -->
+</body>
+</html>
