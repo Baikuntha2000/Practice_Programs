@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+     <script type="text/javascript">
+          function VerifyPassword(){
+               var password = document.getElementById("txtPassword").value;
+               var regExp = /(?=.*[A-Z])\w{4,15}/;
+               var lblError = document.getElementById("lblError");
+               var progress = document.getElementById("progress");
+
+               if(password.length==0) {
+                    lblError.innerHTML = "Password Required".fontcolor('red');
+               } else {
+                    if(password.match(regExp)){
+                              lblError.innerHTML = "Strong Password";
+                              progress.style.width = "100%";
+                              progress.className = "progress-bar bg-success";
+                         } else {
+                              if(password.length<4){
+                                   lblError.innerHTML = "Poor Password";
+                                   progress.style.width = "20%";
+                                   progress.className = "progress-bar bg-danger";
+                              } else {
+                                   lblError.innerHTML = "Weak Password";
+                                   progress.style.width = "60%";
+                                   progress.className = "progress-bar bg-warning";
+                              }
+                     }
+               }
+
+          }
+     </script>
+</head>
+<body class="container-fluid">
+    <h2>Register User</h2>
+    <dl class="w-25">
+      <dt>Password</dt>
+      <dd>
+          <input type="password" onkeyup="VerifyPassword()" id="txtPassword" class="form-control">
+          <div class="progress mt-1">
+               <div class="progress-bar" id="progress">
+                    <span id="lblError"></span>
+               </div>
+          </div>
+      </dd>
+    </dl>
+</body>
+</html>

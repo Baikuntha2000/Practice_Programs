@@ -1,0 +1,41 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+<!-- <head> -->
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <title>Input</title> -->
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"> -->
+    <!-- <script> -->
+         <!-- function AddClick(){ -->
+             <!-- folderName = prompt("Enter Folder Name"); -->
+             <!-- document.querySelector("p").innerHTML += "Folder Created : " + folderName + "<button class='bi bi-trash-fill'></button>" + "<br>"; -->
+        <!-- } -->
+        <!-- </script> -->
+<!-- </head> -->
+<!-- <body> -->
+    <!-- <button onclick="AddClick()">+</button> -->
+    <!-- <p></p> -->
+<!-- </body> -->
+<!-- </html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function bodyload(){
+            querystring = location.search;
+            equalposition = querystring.indexOf("=");
+            foldername = querystring.slice(equalposition);
+            document.querySelector("p").innerHTML = "Folder Created : " + foldername;
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <p></p>
+</body>
+</html>

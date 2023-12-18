@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function buttonClick(){
+            var img=document.createElement("img");
+            img.width="200";
+            img.height="300";
+            img.src="../public/images/image2.jpg"
+            document.getElementById("container").appendChild(img);
+        }
+    </script>
+</head>
+<body>
+     <button onclick="buttonClick()">upload photo</button>
+     <div id="container">
+
+     </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function password(){
+          var password=document.getElementById("password").value;
+          var progress=document.getElementById("progress");
+          var expression=/(?=.*[A-Z])\w{4,15}/;
+          var lblprogress=document.getElementById("lblprogress");
+          if(password.length==0){
+            lblprogress.innerHTML="password required".fontcolor('red');
+          }else{
+            if(password.match(expression)){
+              progress.style.width="100%";
+              lblprogress.innerHTML="strong password";
+              progress.className="progress-bar bg-success";
+            }
+            else{
+              if(password.length<4){
+                progress.style.width="20%";
+                lblprogress.innerHTML="poor password";
+                progress.className="progress-bar bg-danger";
+              }
+              else{
+                progress.style.width="60%";
+                lblprogress.innerHTML="weak password";
+                progress.className="progress-bar bg-warning";
+              }
+            }
+              
+            }
+          }
+    </script>
+</head>
+<body class="container-fluid">
+    <h2>Register User</h2>
+    <dl class="w-25">
+        <dt>Password</dt>
+        <dd>
+            <input type="password" class="form-control" onkeyup="password()" id="password">
+            <div class="progress mt-1">
+                <div class="progress-bar" id="progress">
+                    <span id="lblprogress"></span>
+                </div>
+            </div>
+        </dd>
+    </dl>
+</body>
+</html>

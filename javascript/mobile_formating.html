@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+     function ChangeCase(){
+        var UserTextBox = document.getElementById("UserName");
+        UserTextBox.value = UserTextBox.value.toUpperCase().bold();
+     }
+     function VerifyMobile(){
+        var mobile = document.getElementById("Mobile").value;
+        var mobileError = document.getElementById("MobileError");
+        if(mobile.length==10) {
+           mobileError.innerHTML = "Mobile Verified Successfully..".fontcolor('green').bold().italics();
+        } else {
+           mobileError.innerHTML = "Invalid Mobile".fontcolor('red').italics();
+        }
+     }
+  </script>
+</head>
+<body>
+  <fieldset>
+    <legend>Register User</legend>
+    <dl>
+      <dt>User Name</dt>
+      <dd><input type="text" id="UserName" onkeyup="ChangeCase()" placeholder="Block Letters"></dd>
+      <dt>Mobile</dt>
+      <dd><input type="text" onblur="VerifyMobile()" id="Mobile"></dd>
+      <dd id="MobileError"></dd>
+    </dl>
+  </fieldset>
+</body>
+</html>

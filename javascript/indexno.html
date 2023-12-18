@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function VerifyCard(){
+            var card = document.getElementById("txtCard").value;
+            var img = document.getElementById("imgCard");
+            if(card.startsWith("4455")){
+                img.src = "../public/images/visa.png";
+            } else {
+                img.src = "../public/images/mastercard.png";
+            }
+        }
+        function VerifySkype(){
+            var skypeId = document.getElementById("txtSkype").value;
+            var skypeError = document.getElementById("skypeError");
+            if(skypeId.endsWith("outlook.com")){
+                if(skypeId.indexOf("@")==-1){
+                    skypeError.innerHTML = "Please include @".fontcolor('red');
+                } else {
+                    skypeError.innerHTML = "";
+                }
+            } else {
+                skypeError.innerHTML = "Invalid Skype ID".fontcolor('red');
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl class="w-25">
+        <h2>Payment</h2>
+        <dt>Your Card Number</dt>
+        <dd class="input-group">
+            <input type="text" class="form-control" onblur="VerifyCard()" id="txtCard">
+            <img class="input-group-text" id="imgCard" width="80">
+        </dd>
+        <dt>Your Skype Id</dt>
+        <dd>
+            <input type="text" id="txtSkype" onblur="VerifySkype()" class="form-control">
+        </dd>s
+        <dd id="skypeError"></dd>
+    </dl>
+</body>
+</html>

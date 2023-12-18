@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function VerifyUserName(){
+            var username = document.getElementById("UserName").value;
+            var usererror = document.getElementById("UserError");
+
+            if(username.charAt(0)=="A" || username.charAt(0)=="a") {
+                usererror.innerHTML = "";    
+            } else {
+                usererror.innerHTML = "Name must start with A char".fontcolor('red');
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd>
+            <input type="text"  onblur="VerifyUserName()" id="UserName">
+        </dd>
+        <dd id="UserError"></dd>
+    </dl>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference</title>
+    <script type="text/javascript">
+        function bodyload(){
+            pic.src = "../public/images/a2.jpg";
+            pic1.src = "../public/images/a2.jpg";
+            
+            frmRegister.btnRegister.value = "Register";
+            frmLogin.btnLogin.value = "Login";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <img width="100" name="pic" height="100" border="1">
+    <div>
+        <form name="frmRegister">
+            <h2>Register User</h2>
+            Your Name : <input type="text" name="txtName"> <input name="btnRegister" type="button">
+        </form>
+    </div>
+    <div>
+        <form name="frmLogin">
+            <h2>Login</h2>
+            Your Email : <input name="txtEmail" type="email"> <input name="btnLogin" type="button">
+            <img width="100" name="pic1" height="100" border="1">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function VerifyUserName(){
+            var username = document.getElementById("UserName").value;
+            var userError = document.getElementById("UserError");
+            if(username.length==0){
+                userError.innerHTML = "User Name Required".fontcolor('red');
+            } else {
+                userError.innerHTML = "";
+            }
+        }
+        function VerifyLength(){
+            var username = document.getElementById("UserName").value;
+            if(username.length<4) {
+                document.getElementById("UserError").innerHTML = "Name min 4 chars".fontcolor('red');
+            } else {
+                document.getElementById("UserError").innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd>
+            <input type="text" onkeyup="VerifyLength()" onblur="VerifyUserName()" id="UserName">
+        </dd>
+        <dd id="UserError"></dd>
+    </dl>
+</body>
+</html>
+=]  

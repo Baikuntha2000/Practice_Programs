@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var cities=["Hyderabad","Kolkata"];
+        function PageLoad(){
+            document.getElementById("addValue").innerHTML="";
+            cities.map(function(item){
+                var option=document.createElement("option");
+                option.text=item;
+                option.value=item;
+                document.getElementById("addValue").appendChild(option);
+            })
+            document.getElementById("countValue").innerHTML=`Total no of cities: ${cities.length}`;
+        }
+    //  The indexOf method in JavaScript works by comparing the entire string
+    //  with each element in the array. It does not check single characters; 
+    //  it checks the entire string for equality.
+
+
+        function AddClick(){
+            var city=document.getElementById("txtCity").value;
+            if(cities.indexOf(city)==-1){
+               cities.push(city);
+               alert(`${city} \nadded to list`);
+               PageLoad();
+               document.getElementById("txtCity").value= "";
+
+            }
+            else{
+                alert(`${city} already exist`);
+            }
+
+
+        }
+        function ClickUp(){
+            cities.sort();
+            PageLoad();
+        }
+       function ClickDown(){
+        cities.sort();
+        cities.reverse();
+        PageLoad();
+       }
+
+       function RemoveCity(){
+          var selectedCity=document.getElementById("addValue").value;
+          var selectedIndex=cities.indexOf(selectedCity);
+           var flag=confirm(`are you sure you want to delete :\n${selectedCity}`);
+           if(flag==true){
+            cities.splice(selectedIndex,1);
+           }
+       }
+
+       function ClearAll(){
+           cities.length=0;
+           PageLoad(); 
+       }
+
+       function EditClick(){
+         document.getElementById("editValue").value= document.getElementById("addValue").value;
+       }
+       function SaveClick(){
+        var newValue=document.getElementById("editValue").value;
+        var selectedCity=document.getElementById("addValue").value;
+        var selectedIndex= cities.indexOf(selectedCity); 
+        cities[selectedIndex]=newValue;
+        PageLoad();
+       }
+
+    </script>
+</head>
+<body class="container-fluid" onload="PageLoad()">
+    <h2>Array Manipulation</h2>
+    <div class="w-50">
+        <div class="input-group">
+            <input type="text" placeholder="Add new city" class="form-control" id="txtCity">
+            <button class="btn btn-primary" onclick="AddClick()">Add</button>
+        </div>
+        <div class="mt-4">
+             <button class="bi bi-sort-alpha-down btn btn-success me-2" onclick="ClickDown()"></button>
+             <button class="bi bi-sort-alpha-up btn btn-success me-2" onclick="ClickUp()"></button>
+        </div>
+        <select class="mt-2 mb-2 form-select" id="addValue">
+
+        </select>
+        <label class="form-label fw-bold" id="countValue"></label>
+        <div class="mt-4">
+            <button class="bi bi-trash-fill btn btn-danger me-2" onclick="RemoveCity()">Remove city</button>
+            <button class="bi bi-trash btn btn-outline-danger me-2" onclick="ClearAll()">clear all</button>
+            <button onclick="EditClick()" class="bi bi-pen-fill btn btn-warning me-2" data-bs-target="#Edit" data-bs-toggle="modal">Edit</button>
+        </div>
+        <div class="modal fade" id="Edit">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Edit City</h2>
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                         <input type="text" class="form-control"  id="editValue">
+                    </div>
+                    <div class="modal-footer">
+                        <button data-bs-dismiss="modal" class="bi bi-floppy btn btn-success" onclick="SaveClick()"> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

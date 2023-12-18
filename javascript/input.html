@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+         function BookClick(){
+                 document.getElementById("lblMovie").innerHTML = document.getElementById("lstMovie").value;
+         }
+    </script>
+</head>
+<body class="container-fluid">
+
+    <h3>Quick Booking</h3>
+    <nav class="d-flex justify-content-between p-2  bg-dark text-white">
+        <div>
+            <select class="form-select" id="lstMovie">
+                <option>Select Movie</option>
+                <option>Tiger 3</option>
+                <option>The Marvels</option>
+            </select>
+        </div>
+        <div>
+            <button onclick="BookClick()" class="btn btn-danger">Book</button>
+        </div>
+    </nav>
+    <section>
+    <div class="w-25">
+        <h2>Booking Summary</h2>
+        <div class="card p-2">
+            <img class="card-img-top" id="poster" height="200">
+            <div class="card-header">
+                <dl>
+                    <dt>Movie</dt>
+                    <dd id="lblMovie"></dd>
+                    <dt>Cinema</dt>
+                    <dd id="lblCinema"></dd>
+                    <dt>Date</dt>
+                    <dd id="lblDate"></dd>
+                    <dt>Show Time</dt>
+                    <dd id="lblTime"></dd>
+                    <dt>Seats</dt>
+                    <dd id="lblSeats"></dd>
+                    <dt>Screen</dt>
+                    <dd id="lblScreen"></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
+    
+</body>
+</html>

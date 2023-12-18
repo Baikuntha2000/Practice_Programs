@@ -1,0 +1,102 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+<!-- <head> -->
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <title>Document</title> -->
+    <!-- <script> -->
+        <!-- // function UploadClick(){ -->
+        <!-- //    var table = document.createElement("table"); -->
+        <!-- //    table.width = "100%"; -->
+        <!-- //    table.border = "1"; -->
+<!-- //  -->
+        <!-- //    var thead = document.createElement("thead"); -->
+        <!-- //    var tr_head = document.createElement("tr"); -->
+        <!-- //    var th = document.createElement("th"); -->
+        <!-- //    th.innerHTML = "Name"; -->
+        <!-- //     -->
+            <!-- // thead.appendChild(tr_head); -->
+            <!-- // tr_head.appendChild(th); -->
+<!-- //  -->
+        <!-- //    var tbody = document.createElement("tbody"); -->
+        <!-- //    var tr_body = document.createElement("tr"); -->
+        <!-- //    var td = document.createElement("td"); -->
+        <!-- //    td.innerHTML = "Samsung TV"; -->
+<!-- //  -->
+        <!-- //    tr_body.appendChild(td); -->
+        <!-- //    tbody.appendChild(tr_body); -->
+<!-- //  -->
+        <!-- //    table.appendChild(thead); -->
+        <!-- //    table.appendChild(tbody); -->
+<!-- //  -->
+        <!-- //    document.getElementById("container").appendChild(table); -->
+        <!-- // } -->
+    <!-- // </script> -->
+<!-- </head> -->
+<!-- <body> -->
+    <!-- <button onclick="UploadClick()">Upload Photo</button> -->
+    <!-- <br><br> -->
+    <!-- <div id="container"> -->
+<!--         -->
+    <!-- </div> -->
+<!-- </body> -->
+<!-- </html> -->
+<!--  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var categories = ["All", "Electronics", "Footwear", "Fashion"];
+
+        function LoadClick(){
+
+            document.querySelector("ol").innerHTML = "";
+            document.querySelector("select").innerHTML = "";
+
+            categories.map(function(category){
+
+                var li = document.createElement("li");
+                li.innerHTML = category;
+
+                document.querySelector("ol").appendChild(li);
+
+                var option = document.createElement("option");
+                option.text = category;
+                option.value = category;
+
+                document.querySelector("select").appendChild(option);
+
+                var link = document.createElement("a");
+                link.href="#";
+                link.innerHTML = category;
+                link.style.marginRight = "50px";
+
+                document.querySelector("nav").appendChild(link);
+
+
+            })
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="LoadClick()">Load</button>
+    <br><br>
+    <ol>
+
+    </ol>
+    <br> <br>
+    <select>
+
+    </select>
+    <br><br>
+    <nav>
+
+    </nav>
+</body>
+</html>

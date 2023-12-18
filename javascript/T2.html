@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function BookClick(){
+                  document.getElementById("quickBooking").style.display="none";
+                  document.getElementById("lblMovie").innerHTML=document.getElementById("movie").value;
+                  document.getElementById("lblCinema").innerHTML=document.getElementById("cinema").value;
+                  document.getElementById("lblDate").innerHTML=document.getElementById("date").value;
+                  document.getElementById("lblTime").innerHTML=document.getElementById("time").value;
+                  document.getElementById("lblSeats").innerHTML=document.getElementById("seat").value;
+                  document.getElementById("container").style.display="block";
+                  movie=document.getElementById("movie").value;
+                  poster=document.getElementById("poster");
+                if(movie=="Tiger 3") {
+                poster.src = "../public/images/image1.jpg";
+                } else {
+                    poster.src = "../public/images/marvels.jpg";
+                }
+        }
+        function ModifyBooking(){
+              document.getElementById("btnclick").innerHTML="Update";
+              document.getElementById("btnclick").className="btn btn-success";
+              document.getElementById("quickBooking").style.display="block";
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <header id="quickBooking">
+        <nav class="d-flex justify-content-between p-2 bg-dark text-white">
+            <div>
+                <select id="movie" class="form-select">
+                    <option>Select Movies</option>
+                    <option>Tiger 3</option>
+                    <option>The Marvels</option>
+                </select>
+            </div>
+            <div>
+                <select name="" id="cinema"  class="form-select" >
+                    <option value="Select Cinema">Select Cinema</option>
+                    <option value="INOX-GVK Bhills">INOX-GVK Bhills</option>
+                    <option value="Inox-KPHB">Inox-KPHB</option>
+                </select>
+            </div>
+            <div>
+                <select name="" id="date"  class="form-select">
+                    <option value="Select Date">Select Date</option>
+                    <option value="TODAY 22NOV,2023">TODAY 22NOV,2023</option>
+                    <option value="TOMORROW 23NOV,2023">TOMORROW 23NOV,2023</option>
+                </select>
+            </div>
+            <div>
+                <select name="" id="time"  class="form-select">
+                    <option value="Select Time">Select Time</option>
+                    <option value="10.30AM">10.30AM</option>
+                    <option value="6.30AM">6.30AM</option>
+                </select>
+            </div>
+            <div>
+                <select name="" id="seat" class="form-select" >
+                    <option value="Select Seats">Select Seats</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div>
+                <button class="btn btn-danger" onclick="BookClick()" id="btnclick">Book</button>
+            </div>
+        </nav>
+    </header>    
+    <section class="" id="container" style="display:none">
+        <div class="border border-1 mt-3 w-25 border-dark">
+            <h2>Booking Summary</h2>
+            <div class="card p-2">
+                <img src="" alt="" height="200" class="card-img-top" id="poster">
+                <div class="card-header">
+                    <dl>
+                        <dt>Movie</dt>
+                        <dd id="lblMovie"></dd>
+                        <dt>Cinema</dt>
+                        <dd id="lblCinema"></dd>
+                        <dt>Date</dt>
+                        <dd id="lblDate"></dd>
+                        <dt>Show Time</dt>
+                        <dd id="lblTime"></dd>
+                        <dt>Seats</dt>
+                        <dd id="lblSeats"></dd>
+                    </dl>
+                </div>
+            </div>
+            <button onclick="ModifyBooking()" class="btn btn-link">Modify Booking</button>
+        </div>
+    </section>
+</body>
+</html>

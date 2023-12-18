@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function buttonClick(){
+            var ol=document.createElement("ol");
+            ol.type="a";
+           ol.start="5";
+           var li1= document.createElement("li");
+           li1.innerText="html";
+// <!-- //  -->
+// <!-- //  -->
+           var li2=document.createElement("li");
+           li2.innerText="css";
+// <!-- //  -->
+           ol.appendChild(li1);
+           ol.appendChild(li2);
+           
+           document.getElementById("container").appendChild(ol);
+        }
+     </script>
+
+</head>
+<body>
+<button class="" onclick="buttonClick()">upload photo</button>
+<br><br>
+<div id="container">
+
+</div>
+</body>
+</html>
+<!--  -->

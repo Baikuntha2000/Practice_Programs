@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function buttonClick(){
+            // var ol=document.createElement("ol");
+            // ol.type="1";
+            // var li1=document.createElement("li");
+            // li1.innerHTML="All";
+// 
+            // var li2=document.createElement("li");
+            // li2.innerHTML="Electronics";
+            // 
+            // var li3=document.createElement("li");
+            // li3.innerHTML="Footwear";
+            // 
+            // var li4=document.createElement("li");
+            // li4.innerHTML="Fashion";
+// 
+            // ol.appendChild(li1);
+            // ol.appendChild(li2);
+            // ol.appendChild(li3);
+            // ol.appendChild(li4);
+            // document.getElementById("container").appendChild(ol);
+// 
+            // var option1=document.createElement("option");
+            // option1.innerText="All";
+// 
+            // var option2=document.createElement("option");
+            // option2.innerText="Electronics";
+            // var option3=document.createElement("option");
+            // option3.innerText="Footwear";
+            // var option4=document.createElement("option");
+            // option4.innerText="Fashion";
+// 
+            // document.querySelector("select").appendChild(option1);
+// 
+// 
+// 
+        // }
+
+
+    // for dymamic value
+    var categories=["All","Electronics","Footwear","Fashion"]
+    function buttonClick(){
+        document.querySelector("ol").innerHTML="";
+        document.querySelector("select").innerHTML="";
+
+        categories.map(function(item){
+             var li=document.createElement("li");
+             li.innerHTML=item;
+              
+             document.querySelector("ol").appendChild(li);
+
+           var option=document.createElement("option");
+           option.innerHTML=item;
+            
+           document.querySelector("select").appendChild(option);
+
+
+        })
+    }
+    </script>
+</head>
+<body>
+    <button onclick="buttonClick()">Load</button>
+    <br><br>
+
+    <ol>
+
+    </ol>
+    <br><br>
+
+    <select name="" id="select">
+
+    </select>
+    <br><br>
+</body>
+</html>

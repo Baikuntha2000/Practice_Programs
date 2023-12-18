@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        #display{
+            margin-left: 22%;
+            font-size: 25px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        var count=3;
+        function verifyClick(){
+            var pin=document.getElementById("inputpin").value;
+            var display=document.getElementById("display");
+            if(pin==="4455"){
+                display.innerHTML="pin verified succesfully";
+                display.className="text-success"
+            }
+            else{
+                 count--;
+                 display.innerHTML="You have "+count+" attempts left";
+                 display.className="text-danger";
+                 if(count<1){
+                    display.innerHTML="User blocked";
+                    display.className="text-danger";
+                    document.querySelector("button").disabled=true;
+                 }
+            }
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="d-flex justify-content-center mt-5 w-50">
+            <label class="form-label fw-bold fs-2 me-2">Enter Pin</label>
+            <div class="input-group w-25">
+                <input type="text" id="inputpin" class="form-control">
+                <button class="btn btn-dark text-white text-center fs-4" onclick="verifyClick()">verify</button>
+            </div>
+    </div>
+    <div id="display" class="text-danger">You have 3 attempts left</div>
+</body>
+</html>

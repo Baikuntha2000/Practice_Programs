@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyNmuber(){
+            var num = document.getElementById("number").value;
+            var img=document.getElementById("image");
+            if(num.startsWith("4455")){
+                img.src="../public/images/mastercard.png";
+            }
+            else{
+                img.src="../public/images/visa.png";
+            }
+        }
+        function VerifySkypeId(){
+            var skypeid=document.getElementById("skypeid").value;
+            var verify=document.getElementById("verify");
+            if(skypeid.endsWith("outlook.com")){
+                if(skypeid.indexOf("@")==-1){
+            verify.innerHTML="Please add @".fontcolor("red");
+            }
+            else{
+                verify.innerHTML="";
+            }
+            }
+            else{
+                verify.innerHTML="please enter a valid skypeid".fontcolor("red");
+            }
+        }
+
+    </script>
+</head>
+<body class="container-fluid">
+    <dl class="w-25">
+        <h2>Payment</h2>
+        <dt>Your Card Number</dt>
+        <dd class="input-group">
+            <input type="text" class="form-control p-2" id="number" onchange="VerifyNmuber()">
+            <img class="input-group-text" width="80" id="image">
+        </dd>
+        <dt>Your Skype Id</dt>
+        <dd>
+           <input type="text" class="form-control p-2" onchange="VerifySkypeId()" id="skypeid"> 
+        </dd>
+        <dd id="verify"></dd>
+    </dl>
+</body>
+</html>
