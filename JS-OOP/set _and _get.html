@@ -1,0 +1,54 @@
+<script>
+    var username = prompt("Enter Your Name");
+    var role = prompt("Enter Your Role","admin | customer | manager");
+    class Product
+    {
+       _productName;
+       get ProductName(){
+          return this._productName;
+       }
+       set ProductName(newName)
+       {
+          if(role==="admin"){
+               this._productName = newName;
+          } else {
+               document.write(`Hello ! ${username} your role ${role} is not authorized  to set product name`);
+          }
+       }
+    }
+    let tv = new Product();
+    tv.ProductName = prompt("Enter Product Name");
+    if(tv.ProductName){
+       document.write(`Product Name : ${tv.ProductName}`);
+    }
+</script>
+
+
+Class Definition:
+The Product class is defined with an uninitialized private field _productName. 
+The leading underscore is a convention indicating that it's intended to be a private field.
+
+
+Getter (ProductName):
+The class has a getter method named ProductName. When you access ProductName on an instance 
+of the Product class, it returns the current value of _productName.
+
+Setter (ProductName):
+The class has a setter method also named ProductName. It takes a parameter newName 
+and attempts to set the value of _productName based on certain conditions.
+If the role is "admin," it sets _productName to the new value (newName).
+If the role is not "admin," it writes a message to the document indicating that the role is not authorized to set the product name.
+
+
+
+Usage Example:
+An instance of the Product class is created: let myProduct = new Product();
+The setter (ProductName) is used to set the value of _productName: myProduct.ProductName = "New Product";
+The getter (ProductName) is used to retrieve the value of _productName: console.log(myProduct.ProductName);
+
+Role and Username:
+
+The role and username variables are used in the setter to determine whether the role is authorized to set the product name.
+Document Output:
+
+If the role is not authorized, a message is written to the document using document.write.
